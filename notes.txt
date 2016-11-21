@@ -53,6 +53,7 @@
         2.39 If the vendore uses a different login system then how this product know is the request from a valid authenticator?
         2.40 How is database(ex: mysql on amazon) taken care of? are we saying that we are not deploying or giving a way to build the schema and the databases, tables
         2.41 if suppose the json conversion fails what is to be done with the db object?**(Important)
+        2.42 If the request cannot be converted/processed to JSON format the request somehow should be returned in the response and the reason to be included.So in this case the client can decide of what is to be done with the request.This also solves 2.41 to an extent and this should be documented
 	
 
 3. Documentation
@@ -68,6 +69,7 @@
 	3.10 Advantages of having locally and remotely and its performance to be documented.
 	3.11 Documentation w.r.t each company and general documentation
 	3.12 Web browser documenatation
+	3.13 Ifa request response cannot be processed at any point the object shall be passed back to the client in the response and including the reason for the same.
 
 4. Disadvantages
 	4.1 The data is stored remotely.
