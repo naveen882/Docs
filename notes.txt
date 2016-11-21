@@ -1,0 +1,131 @@
+1. Client
+	1.1 UI to have modelling diagram to include the archirtecture and client.js another program to check the validity of the modelling diagram
+	1.2 This is also to ease for the inheriting system to understand the architecture of the parent system.
+	1.3 Corresponding libraries like(redis.js,database.js) to be included in the client code in a minified format.
+	1.4 Custom js libraries to be built for the use in the project(Or may use the existing one like angular.js or other frameworks yet to be decided)
+	1.5 Client to run a webserver to serve the html pages and can have its own architecture to serve the html pages
+	1.6 Any html page at any point can test the server status for any service using ping.js(database.js,node.js)
+	1.7 ping.js not be used in production until unless required or use ping.js in a different setup on the server
+	1.8 How are te new versions of the html or api's handeled ? Should the server know about the html/apis implementation changes ?
+	1.9 UI developers can write business logic and implement it instead of depending on the server side coding.
+	1.10 JS can be deployed using the minified version of it.
+	
+
+2. Server
+	2.1 Server to validate modelling diagram
+	2.2 If not valid do not accept the configuration
+	2.3 Server to give an interface to test queries for join and more complex queries which is to be executed on a separate environment and once accepted by the server and the user then apply it to the production from the server interface
+	2.4 Any decision making or logical decisions has to be written in containers
+	2.5 containes to be handeled seprately via Laniakea platform 
+	2.6 Server to provide zero down time for the containers by its own architecture
+	2.7 Every service (redis.js ,database.js) request/response will be in json format.
+	2.8 request/response will be handled by a set of containers as decided by the architecture.
+	2.9 Server side would mainly be implemented on python stack
+	2.10 Platform/Os request is not yet considered(To be decided)
+	2.11 Sandbox to be made available for the dev env.
+	2.12 How would jenkins help a developer in deployment of his own setup and setup with respect to the server?
+	2.13 How are the bugs fixes and notifications of the same recorded in the documentation.
+	2.14 API's to be provided and shown on the server UI to view alldatasets/filter/viewone record including pagination options.
+	2.15 Permissions/User access control/management to be implemented to authorize for insertion or deletion of the records and prevent unauthorized access
+	2.16 Backups to be made for the client systems,backups apis and details to be provided on the server UI as other database records
+	2.17 One to one data accessibility, as in whats app barcode security
+	2.18 User management and access control to be provided for the users
+	2.19 CI/CD for server deployment.Operational team.
+	2.20 Push message service,SMS service to be provided
+	2.21 Every request response is to be recorded on the server for a limited time (to be decided)
+	2.22 Deployment of user containers
+	2.23 Ddos attack prevention
+	2.24 No intervention of any user all deployments are automatic and no user will hae access to client accounts until unless required or requested by the client.
+	2.25 Authentication on the server to include authentication from other servers(google,yahoo.facebook,twitter)
+	2.26 SSO to be taken into consideration(To be decided)
+	2.27 All certificates to be considered
+	2.28 What about video streaming,audio streaming ?is it considered in the above,so as to how the videos,audio are uploaded ? (To be decided)
+	2.29 Billing service for the client and the server as a service is provided
+	2.30 Monitoring as a service(To be discussed)
+	2.31 Mail services to clients and the server(To be discussed)
+	2.32 Backup and recovery
+        2.33 One click deployment
+        2.34 VPN solutions for orgnanisations /i.e, product can be accessed through company vpn which will be deployed in their company only(To be discussed)
+        2.35 Graphical reports
+        2.36 Graphical reports geo based suggesting which part of the geo where the product is used more
+        2.37 Looking for more ? in the product UI to get the custom requirement to be desigened from our product tot he customer,this might be functionalites in our product or HR to help customers(service based)
+        2.38 Server interface to give interface with textarea for customers to write customer queries and to be converted in the API form. This is also to avaid the overhead of deploying a container just for executing custom queries.Ultimately containers i.e,to bedeployed are for complex calucations and business logic decisions tools.If writing queries solves the problem then there is no need of the conatiner
+        2.39 If the vendore uses a different login system then how this product know is the request from a valid authenticator?
+        2.40 How is database(ex: mysql on amazon) taken care of? are we saying that we are not deploying or giving a way to build the schema and the databases, tables
+        2.41 if suppose the json conversion fails what is to be done with the db object?**(Important)
+	
+
+3. Documentation
+	3.1 Documentation similar to digital ocean to be provided for the ease of developmet and developers
+	3.2 A fixed format of json from server/client to be decided and would note change ever and this decision to be made at the point of disussion of the architecture
+	3.3 Portability between dev and production to be made.(i.e, changes from dev env to be implemented in the prod)
+	3.4 How are the bug fixes indicated in the documentation?
+	3.5 Server UI to have documented every single piece of information as the usage and many more
+	3.6 Server UI to document how will the reports sent out to clients inlucing cost incurred and status of usage.Justifying all the informations
+	3.7 To fix the number of available serice and document all the same as per the official documentation
+	3.8 Acquire license and display the same if any.
+	3.9 Documentation for the response time/speed of the API's to be documented 
+	3.10 Advantages of having locally and remotely and its performance to be documented.
+	3.11 Documentation w.r.t each company and general documentation
+	3.12 Web browser documenatation
+
+4. Disadvantages
+	4.1 The data is stored remotely.
+	4.2 Every request will cost them including to view the backup status (To be discussed more)
+	4.3 Every resource is available as a service and not available inhouse
+	4.4 Complex architecture will need more and more improvments on the server
+	4.5 Advantages of having locally and remotely in speed to be considred.(Even if redis is stored on their severs still it is an API call to their server)
+	4.6 Cannot work with files since javascript cannot write into files ,and also how is the upload handled?javascript can only read files
+	4.7 How is data from nysql converted to file and how download option is given?.But files can be stored as blob in mysql but how would this help?Do we need a server converter service to be provided here?If so how expensive it is?i.e, should this serive be charged or not?
+        4.8 if suppose the json conversion fails what is to be done with the db object?**(Important)
+
+5. Advantages
+	5.1 Siginificantly reduce the dev time of the product
+	5.2 For a developer only bugs w.r.t API or the html, UI remains and would require very fewer resource to fix and test the same
+	5.3 Algorithms can be written in js on the client side and can make real time decisions
+	5.4 Should not worry about the user managament(create/edit on the server) will be handeled by the server if opted
+	5.5 All request response in json format no explicit conversions are required as this is a well defined and fixed format
+	5.6 Need not worry about backups
+	5.7 Operations cost would tremendously come down increasing the revenue.
+	5.8 Will have lesser cost if the request response is more the ****/perdday(numbers to be fixed)
+	5.9 Will have to pay as per the usage and the data usage on the server.
+	5.10 Need not to worry of having different backend(Java,Python,Asp.net) and would reduce considerable investment in the resources of the same.
+	5.11 Can focus more on product and stratergies for revenues instead of dev and prod environments
+	5.12 Would considerably reduce the operational cost on physical assets(dc's,pc,storage)
+	5.13 For all the above said so...why would the cloud be required?OR what are the advantages of the cloud over this product? 
+	5.14 
+
+6. Objective
+	6.1 The objective of the above product is to have all the services in one point/product
+	6.2 To help technology improve
+	6.3 To let go of old legacy (every server having its own server,DB,Caching,queues)
+	6.4 What is the next step after client/server
+	6.5 To eliminate differentiation in the programming languages(JAVA,Ruby,Python)
+	6.6 To help considerably for all products to grow.
+	6.7 This is a complete API driven system.For complex data processing a conatiner can be creating and be uploaded for which even the API's will be supported
+	6.8 Ultimate goal is also to reduce the cost for the customer
+
+7. Business model
+	7.1 Every request/response is charged for DB queries at different prices
+	7.2 Data is charged as per storage basis
+	7.3 Request/response for redis/queue is chargable at different prices
+	7.4 Push message services,SMS charged at different prices
+	7.5 Web page deployment on our server to be charged separately
+	7.6 Access control /user management to be charged separately
+	7.7 New enhancement/request to be charged separately
+	7.8 Database backups to be given to user to be charged separately
+	7.9 Reduction in price if there is more usage(limits to be fixed)
+	7.10 Billing service for the client is chargable
+	7.11 Graphical reports suggesting geo usages and suggestions to be charged ?(TBD) Normal graphical reports are to not be charged
+	7.12 Custom requirement and (service based - human resources) to be charged separately
+        7.13 if suppose the json conversion fails what is to be done with the db object?The charges are to be handled differently in this case
+        7.14 How is the down time of the product compensated to the customer?
+
+8. Operation costs
+	8.1 Engineering costs(Development/devops/QA/Marketing/Sales).
+	8.2 Operational costs(Costs on the server,dev setup(systems,keyboards.....)).
+	8.3 Cosmetics(Office space,Daily expenses incurred).
+	8.4 Licenses if any.
+	8.5 Sandbox with limits on number of request/response to be beared on the company after which the client is chargable.
+	8.6 Company registration
+	8.6 Training for new employees once the product is fully dveloped for (service based)

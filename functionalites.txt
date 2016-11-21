@@ -1,0 +1,46 @@
+UI driven applications
+Message-driven applications
+Execution Duration
+Tooling(API functionalites)
+#NoOps
+Benefits
+    Reduced operational cost
+    BaaS - reduced development cost
+    FaaS - scaling costs
+    Optimization is the root of some cost savings
+    Easier Operational Management
+    Scaling benefits of FaaS beyond costs
+    Reduced packaging and deployment complexity
+    Time to market / experimentation
+    ‘Greener’ computing?
+Drawbacks
+    Inherent Drawbacks
+        Vendor control(Not in our case)
+        Multitenancy Problems(Again not in our case)
+        Vendor lock-in(Switching vendors is alos not a problem in our case)
+        Repetition of logic across client platforms
+        Loss of Server optimizations
+    Implementation Drawbacks
+        Configuration
+        DoS yourself
+        Execution Duration
+        Startup Latency
+        Testing
+        Deployment / packaging / versioning
+        Discovery
+        Monitoring / Debugging
+        API Gateway definition, and over-ambitious API Gateways
+        Deferring of operations
+Mitigating the Drawbacks
+    Tooling
+    State Management
+    Platform Improvements
+    Education
+    Increased transparency / clearer expectations from Vendors
+    The emergence of patterns
+    Beyond ‘FaaSification’
+    Testing
+    Portable implementations
+    Abstractions over Vendor implementations
+    Deployable implementations
+Community        
